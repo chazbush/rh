@@ -13,6 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    
 
     <!-- Custom CSS -->
     <style>
@@ -65,7 +66,7 @@
 
         <div class="row">
             <div class="col-lg-12 text-center" id="header-index">
-                <h2>Add Items</h2>
+                <h1>Add Items</h1>
             </div>
         </div>
         <!-- /.row -->
@@ -74,21 +75,26 @@
         <div class="row">
             <div class="col-lg-4 col-lg-offset-1 col-sm-6 text-center">
                 <label class="sr-only">Create by Purchase Order Number:</label>
-                <button class="btn btn-block btn-default" data-toggle="modal" data-target="#poModal">Search by PO Number</a>
+                <a class="btn btn-block btn-default" data-toggle="modal" data-target="#poModal">Search by PO Number</a>
             </div>
 
-            <div class="col-lg-4 col-lg-offset-2 col-sm-6 text-center">
+            <div class="col-lg-2  col-sm-0 text-center">
+                <label><h3>Or</h3></label>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 text-center">
                 <label class="sr-only">Create Sample/EPO Item</label>
                 <a class="btn btn-block btn-default" href="#">Create Add Hoc Item</a>
             </div>
        
         </div>
         <!-- /options -->
-
-		<?php
-		include 'lookup.php';
-		?>
-		
+        
+        <!-- items table -->
+        <div class="table" id="itemsTable">
+		    <?php include 'lookup.php'; ?>
+        </div>
+		<!-- /items table -->
 		
         <!-- item modal -->
         <div class="modal fade" id="poModal" role="dialog">
@@ -98,12 +104,16 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title">Purchase Order Details</h4>
                     </div>
                     
                     <div class="modal-body">
-                    <p>Test content.</p>
+                        <div class="col-lg-4 col-sm-6 text-center">
+                            <label>PO Number</label>
+                            <input type="text" class="po_num"
+                        </div>    
                     </div>
+
                     <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>                   

@@ -6764,9 +6764,16 @@ button.close {
   margin-bottom: 30px;
 }
 
+
+
 #nav-logo {
   left: 0px;
   top: 0px;
   z-index: -1;
   height: 30px;
+}
+
+#itemsTable {
+  margin-top: 30px;
+
 }
