@@ -45,23 +45,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
-                <a class="navbar-brand" href="index.html"><img alt="RH" src="./pics/rh_nav_logo.png" id="nav-logo"></a>
-            
+                <a class="navbar-brand" href="index.php"><img alt="RH" src="./pics/rh_nav_logo.png" id="nav-logo"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1"">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -77,7 +69,6 @@
                 <h1>What do you want to do?</h1>
             </div>
         </div>
-        <!-- /.row -->
 
         <!-- options -->
         <div class="row">
