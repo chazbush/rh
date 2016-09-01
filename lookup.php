@@ -13,7 +13,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 	die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT po_num, po_line_num, po_dept_num, po_vendor_item_num, po_vendor_item_desc FROM po_extract WHERE po_num = \"1866693\";";
+$sql = "SELECT po_num, po_line_num, po_dept_num, po_vendor_item_num, po_vendor_item_desc FROM po_extract WHERE po_num = 186544;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
 		echo 
 			"<tr>
 				<td>".$x."</td>
-				<td class=\"text-center\">".$row["po_num"]."</td>
+				<td class=\"text-center\">".$row["po_num"].;"</td>
 				<td class=\"text-center\">".$row["po_line_num"]."</td>
 				<td class=\"text-center\">".$row["po_dept_num"]."</td>
 				<td class=\"text-center\">".$row["po_vendor_item_num"]."</td>

@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-lg-4 col-sm-4 text-center">
                 <label class="sr-only">Create Air Authorization</label>
-                <a class="btn btn-block btn-default" href="add_items.php">Create Air Auth</a>
+                <a class="btn btn-block btn-default" href="items.php">Create Air Auth</a>
             </div>
 
             <div class="col-lg-4 col-sm-4 text-center">

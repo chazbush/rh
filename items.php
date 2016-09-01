@@ -97,27 +97,53 @@
 		<!-- /items table -->
 		
         <!-- item modal -->
-        <div class="modal fade" id="poModal" role="dialog">
-            <div class="modal-dialog">
-
-            <!-- Modal content-->
+        <div class="modal fade" id="poModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Purchase Order Details</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title text-center">PO Item Lookup</h3>
                     </div>
                     
-                    <div class="modal-body">
-                        <div class="col-lg-4 col-sm-6 text-center">
-                            <label>PO Number</label>
-                            <input type="text" class="po_num"
-                        </div>    
-                    </div>
+                    <div class="modal-body" id="modal-body">
+                        
+                        <form method="post" action="lookup.php">
 
+                            <div class="row">
+                                    <div class="col-lg-4 col-lg-offset-1 text-right">
+                                        <label class="lblModal">PO Number:</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" id="poNum">
+                                    </div>
+                            </div>
+                            
+                            <div class="row">
+                                    <div class="col-lg-4 col-lg-offset-1 text-right">
+                                        <label class="lblModal">PO Line #:</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" id="poLineNum">
+                                    </div>
+                            </div>
+
+                            <div class="row">
+                                    <div class="col-lg-4 col-lg-offset-1 text-right">
+                                        <label class="lblModal">Dept Number:</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" id="poDeptNum">
+                                    </div>
+                            </div>
+                    </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>                   
-            </div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Lookup">
+                    </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
           
             
         </div>
