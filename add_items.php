@@ -14,7 +14,6 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
-
     <!-- Custom CSS -->
     <style>
      body {
@@ -49,7 +48,7 @@
                 <a class="navbar-brand" href="index.php"><img alt="RH" src="./pics/rh_nav_logo.png" id="nav-logo"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1"">
+            <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>

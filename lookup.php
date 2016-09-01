@@ -22,6 +22,7 @@ if ($result->num_rows > 0) {
 		<table id=\"table\" class=\"table table-hover table-mc-light-blue\">
 		<thead>
 			<tr>
+				<th>#</th>
 				<th>Vendor Item Number</th>
 				<th>PO Number</th>
 				<th>PO Line Number</th>
@@ -31,10 +32,13 @@ if ($result->num_rows > 0) {
 		<tbody>";
 
 	// output data of each row
+	$x=0;
 	while($row = $result->fetch_assoc()) {
+	$x++;
 		echo 
 			"<tr>
-				<td contenteditable='true'>".$row["po_vendor_item_num"]."</td>
+				<td>".$x."</td>
+				<td>".$row["po_vendor_item_num"]."</td>
 				<td>".$row["po_num"]."</td>
 				<td>".$row["po_line_num"]."</td>
 				<td>".$row["po_dept_num"]."</td>

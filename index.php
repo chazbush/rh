@@ -13,7 +13,6 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/grid.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
@@ -49,7 +48,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1"">
+            <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>
@@ -79,16 +78,15 @@
 
             <div class="col-lg-4 col-sm-4 text-center">
                 <label class="sr-only">Update Air Authorization</label>
-                <button class="btn btn-block btn-default">Update Air Auth</button>
+                <a class="btn btn-block btn-default">Update Air Auth</a>
             </div>
 
             <div class="col-lg-4 col-sm-4 text-center">
                 <label class="sr-only">View Air Authorization</label>
-                <button class="btn btn-block btn-default">View Air Auth</button>
+                <a class="btn btn-block btn-default">View Air Auth</a>
             </div>
         </div>
         <!-- /options -->                
-
     </div>
     <!-- /.container -->
 

@@ -18,7 +18,7 @@
 html, body {
   position: relative;
   min-height: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 html {
@@ -485,7 +485,7 @@ body {
 }
 .table-hover.table-mc-light-blue > tbody > tr:hover > td,
 .table-hover.table-mc-light-blue > tbody > tr:hover > th {
-    background-color: #b3e5fc;
+    background-color: #A0A0A0;
 }
 @media screen and (max-width: 767px) {
     .table-responsive-vertical .table-striped.table-mc-light-blue > tbody > tr > td,
@@ -493,14 +493,14 @@ body {
         background-color: @table-bg;
     }
     .table-responsive-vertical .table-striped.table-mc-light-blue > tbody > tr > td:nth-child(odd) {
-        background-color: #e1f5fe;
+        background-color: #A0A0A0;
     }
     .table-responsive-vertical .table-hover.table-mc-light-blue > tbody > tr:hover > td,
     .table-responsive-vertical .table-hover.table-mc-light-blue > tbody > tr:hover {
         background-color: @table-bg;
     }
     .table-responsive-vertical .table-hover.table-mc-light-blue > tbody > tr > td:hover {
-        background-color: #b3e5fc;
+        background-color: #A0A0A0;
     }
 }
 .table-striped.table-mc-cyan > tbody > tr:nth-child(odd) > td,
