@@ -122,7 +122,7 @@
                     
                     <div class="modal-body" id="modal-body">
                         
-                        <form method="post" class="form-horizontal" action="lookup.php">
+                        <form method="post" class="form-horizontal" action="$_SERVER[""]">
                             <div class="form-group">
                                 <div class="col-lg-4 col-lg-offset-1 text-right">
                                     <label class="control-label">PO Number:</label>
