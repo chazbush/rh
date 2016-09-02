@@ -11,19 +11,37 @@
 
     <title>Bare - Start Bootstrap Template</title>
 
+    <script>
+        function lookup() {
+            var xmlHttpRequest;
+            if (window.XMLHttpRequest) {
+                xmlHttpRequest = new XMLHttpRequest();
+            }
+            else {
+                xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            this.onreadystatechange=function(){
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById("itemsTable").innerHTML = this.responseText;
+                }
+            }            
+            xmlHttpRequest.open("POST", "lookup.php", true)
+            xmlHttpRequest.send();
+        }
+    </script>
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     
 
     <!-- Custom CSS -->
     <style>
-     body {
+    body {
         padding-top: 70px;
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */ 
     }  
     </style> 
   
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -60,6 +78,56 @@
         </div>
         <!-- /.container -->
     </nav>
+    <!-- /nav -->
+
+    <!-- lookup modal -->
+        <div class="modal fade" id="poModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title text-center">PO Item Lookup</h3>
+                    </div>
+                    
+					<form class="form-horizontal" action="lookup.php" id="poLookupForm" method="POST">
+					
+						<div class="modal-body" id="modal-body">
+							
+								<div class="form-group">
+									<div class="col-lg-4 col-lg-offset-1 text-right">
+										<label class="control-label">PO Number:</label>
+									</div>
+									<div class="col-lg-6">
+										<input type="text" name="poNum">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<div class="col-lg-4 col-lg-offset-1 text-right">
+										<label class="control-label">PO Line #:</label>
+									</div>
+									<div class="col-lg-6">
+										<input type="text" name="poLineNum" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-lg-4 col-lg-offset-1 text-right">
+										<label class="control-label">Dept Number:</label>
+									</div>
+									<div class="col-lg-6">
+										<input type="text" name="poDeptNum">
+									</div>
+								</div>
+						</div>
+						<div class="modal-footer">
+							<button type="reset" class="btn btn-default">Clear Form</button>
+							<input type="button" onclick="lookup()" class="btn btn-primary" value="Lookup" data-dismiss="modal">
+						</div>
+					</form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
     <!-- Page Content -->
     <div class="container">
@@ -78,72 +146,23 @@
                 <a class="btn btn-block btn-default" data-toggle="modal" data-target="#poModal">Search by PO Number</a>
             </div>
 
-            <div class="col-lg-2  col-sm-0 text-center">
-                <label><h3>Or</h3></label>
+            <div class="col-lg-2 col-sm-1 text-center">
+                <label class="text-vcenter"><h3>Or</h3></label>
             </div>
 
             <div class="col-lg-4 col-sm-6 text-center">
                 <label class="sr-only">Create Sample/EPO Item</label>
                 <a class="btn btn-block btn-default" href="#">Create Add Hoc Item</a>
             </div>
-       
         </div>
         <!-- /options -->
         
         <!-- items table -->
         <div class="table" id="itemsTable">
-		    <?php include 'lookup.php'; ?>
+            
         </div>
 		<!-- /items table -->
 		
-        <!-- item modal -->
-        <div class="modal fade" id="poModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h3 class="modal-title text-center">PO Item Lookup</h3>
-                    </div>
-                    
-                    <div class="modal-body" id="modal-body">
-                        
-                        <form method="post" action="lookup.php">
-
-                            <div class="row">
-                                    <div class="col-lg-4 col-lg-offset-1 text-right">
-                                        <label class="lblModal">PO Number:</label>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" id="poNum">
-                                    </div>
-                            </div>
-                            
-                            <div class="row">
-                                    <div class="col-lg-4 col-lg-offset-1 text-right">
-                                        <label class="lblModal">PO Line #:</label>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" id="poLineNum">
-                                    </div>
-                            </div>
-
-                            <div class="row">
-                                    <div class="col-lg-4 col-lg-offset-1 text-right">
-                                        <label class="lblModal">Dept Number:</label>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" id="poDeptNum">
-                                    </div>
-                            </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Lookup">
-                    </div>
-                    </form>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
           
             
         </div>

@@ -15,10 +15,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 $poNum = $_POST["poNum"];
 
-$sql = "SELECT po_num, po_line_num, po_dept_num, po_vendor_item_num, po_vendor_item_desc FROM po_extract WHERE po_num = .$poNum.;";
+$sql = "SELECT po_num, po_line_num, po_dept_num, po_vendor_item_num, po_vendor_item_desc FROM po_extract WHERE po_num = $poNum;";
 $result = $conn->query($sql);
 
-echo ".$poNum.";
+echo "Showing results for PO: " .$poNum. ". </br>"; 
 
 if ($result->num_rows > 0) {
 	echo "
