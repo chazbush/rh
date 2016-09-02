@@ -79,20 +79,35 @@
             </div>
 
             <div class="col-lg-2  col-sm-0 text-center">
-                <label><h3>Or</h3></label>
+                <label class="text-vcenter"><h3>Or</h3></label>
             </div>
 
             <div class="col-lg-4 col-sm-6 text-center">
                 <label class="sr-only">Create Sample/EPO Item</label>
                 <a class="btn btn-block btn-default" href="#">Create Add Hoc Item</a>
             </div>
-       
         </div>
         <!-- /options -->
         
         <!-- items table -->
         <div class="table" id="itemsTable">
-		    <?php include 'lookup.php'; ?>
+		    <?php
+            // define variables and set to empty values
+            $poNum = $poLineNum = $poDeptNum = "";
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $poNum = test_input($_POST["name"]);
+            $poLineNum = test_input($_POST["email"]);
+            $poDeptNum = test_input($_POST["website"]);
+            }
+
+            function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+            }
+            ?>
         </div>
 		<!-- /items table -->
 		
@@ -107,38 +122,36 @@
                     
                     <div class="modal-body" id="modal-body">
                         
-                        <form method="post" action="lookup.php">
-
-                            <div class="row">
-                                    <div class="col-lg-4 col-lg-offset-1 text-right">
-                                        <label class="lblModal">PO Number:</label>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" id="poNum">
-                                    </div>
+                        <form method="post" class="form-horizontal" action="lookup.php">
+                            <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-1 text-right">
+                                    <label class="control-label">PO Number:</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" name="poNum">
+                                </div>
                             </div>
                             
-                            <div class="row">
-                                    <div class="col-lg-4 col-lg-offset-1 text-right">
-                                        <label class="lblModal">PO Line #:</label>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" id="poLineNum">
-                                    </div>
+                            <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-1 text-right">
+                                    <label class="control-label">PO Line #:</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" name="poLineNum" />
+                                </div>
                             </div>
-
-                            <div class="row">
-                                    <div class="col-lg-4 col-lg-offset-1 text-right">
-                                        <label class="lblModal">Dept Number:</label>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" id="poDeptNum">
-                                    </div>
+                            <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-1 text-right">
+                                    <label class="control-label">Dept Number:</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" name="poDeptNum">
+                                </div>
                             </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Lookup">
+                        <input type="submit" class="btn btn-primary" value="test">
                     </div>
                     </form>
                 </div><!-- /.modal-content -->
